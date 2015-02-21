@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning Canvas</title>
+	<meta charset="UTF-8">
+	<script src="js/jquery-1.8.2.min.js"></script>
+	<script src="js/garlic.js"/></script>
+	<style type="text/css">
+		body {
+			font-family: arial;
+			text-align: center;
+		}
+		table {
+			border-collapse:collapse;
+			text-align: left;
+			background: #EEF5FF;
+			width: 1240px;
+			margin: auto;
+		}
+		tr > td {
+			padding-bottom: 70px;
+		}
+		td {
+			padding: 20px;
+			border: 4px solid white;
+			vertical-align: top;
+		}
+		th:first-child {
+			max-width: 20px;
+			overflow: hidden;
+		}
+		thead th:first-child {
+			background: white;
+		}
+		td p, li {
+			color: #999;
+		}
+		thead th {
+			border:4px solid white;
+			font-size: 20px;
+			font-weight: normal;
+			text-transform: uppercase;
+			background: #F0E3E3;
+			padding: 10px 20px;
+		}
+		tbody th {
+			background: #eee;
+		}
+		tbody th div {
+			background: #eee;
+			font-size: 20px;
+			font-weight: normal;
+			text-transform: uppercase;
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			writing-mode: tb-rl;
+
+		}
+		label {
+			font-size: 20px;
+			font-weight: bold;
+			display: block;
+		}
+		p, textarea, input {
+			font-size: 16px;
+		}
+		textarea {
+			width: 100%;
+			height: 100px;
+		}
+		textarea, input {
+			display: block;
+			border: none;
+			overflow: auto;
+			outline: none;
+			background: white;
+			margin: 10px 0;
+		}
+		textarea:focus, input:focus {
+			border:4px solid black;
+		}
+		input {
+			width: 100%;
+			height: 30px;
+		}
+		ul  {
+			padding-left:0;
+			list-style: none;
+		}
+		ul li  {
+			list-style-position:inside
+		}
+	</style>
+</head>
+<body>
+	<h1>Machine Learning Canvas</h1>
+	<form data-persist="garlic" method="post">
+	<table>
+		<thead>
+			<tr>
+				<th width="4Opx"></th>
+				<th width="400px">Predictions</th>
+				<th width="400px">Objectives</th>
+				<th width="400px">Data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th><div>Idea</div></th>
+				<td>
+					<label for="context">Context</label>
+					<p>Who will use the predictive system / who will be affected by it? Provide some background.</p>
+					<textarea name="context"></textarea>
+				</td>
+				<td>
+					<label for="vp">Value Proposition</label>
+					<p>What are we trying to do? E.g. spend less time on X, increase Y...</p>
+					<textarea name="vp"></textarea>
+				</td>
+				<td>
+					<label for="data-sources">Data Sources</label>
+					<p>Where do/can we get data from? (internal database, 3rd party API, etc.)</p>
+					<textarea name="data-sources"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th><div>Specs</div></th>
+				<td>
+					<label>Problem</label>
+					<ul>
+						<li>Question to predict answers to (in plain English)<input type="text" name="question"></li>
+						<li>Input (i.e. question "parameter")<input type="text" name="input"></li>
+						<li>Possible outputs (i.e. "answers")<input type="text" name="output"></li>
+						<li>Type of problem (e.g. classification, regression, recommendation...)<input type="text" name="type"></li>
+					</ul>
+
+					<label style="margin-top:40px;" for="baseline">Baseline</label>
+					<p>What is an alternative way of making predictions (e.g. manual rules based on feature values)?</p>
+					<textarea name="baseline"></textarea>
+				</td>
+				<td>
+					<label>Performance evaluation</label>
+					<ul>
+						<li>Domain-specific / bottom-line metrics for monitoring performance in production
+							<!--(there can be an A/B test to put metrics in perspective)-->
+							<textarea style="height: 118px;" name="bottomline"></textarea></li>
+						<li>Prediction accuracy metrics (e.g. MSE if regression; % accuracy, #FP for classification)<textarea style="height: 118px;" name="accuracy"></textarea></li>
+						<li>Offline performance evaluation method (e.g. cross-validation or simple training/test split)
+							<textarea style="height: 118px;" name="evaluation-method"></textarea></li>
+					</ul>
+
+				</td>
+				<td>
+					<label for="dataset">Dataset</label>
+					<p>How do we collect data (inputs and outputs)? How many data points?
+						<!--Also explain how to get example outputs, e.g. manually or we observe truth after making predictions, etc.)-->
+					</p><textarea style="height: 118px;" name="dataset"></textarea>
+
+					<label style="margin-top:40px;" for="features">Features</label>
+					<p>Used to represent inputs and extracted from data sources above. Group by types and mention key features if too many to list all.</p>
+					<textarea style="height: 198px;" name="features"></textarea>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table>
+		<tbody>
+			<tr>
+				<th width="40px"><div>Deployment</div></th>
+				<td width="600px">
+					<label>Using predictions</label>
+					<ul>
+						<li>When do we make predictions and how many?<textarea name="predictions-when"></textarea></li>
+						<li>What is the time constraint for making those predictions?<input type="text" name="predictions-time"></li>
+						<li>How do we use predictions and confidence values?<br/>&nbsp;<textarea name="predictions-usage"></textarea></li>
+						<!--<li>What is the fallback if we don't get a prediction in time?<input type="text"></li>-->
+					</ul>
+				</td>
+				<td width="600px">
+					<label>Learning predictive models</label>
+					<ul>
+						<li>When do we create/update models? With which data / how much?<textarea name="learning-when"></textarea></li>
+						<li>What is the time constraint for creating a model?<input type="text" name="learning-time"></li>
+						<li>Criteria for deploying model (e.g. minimum performance value — absolute, relative to baseline or to previous model)<textarea name="learning-deployment"></textarea></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button name="reset-button"><input type="reset" class="btn garlic-auto-save" value="Reset Form"/></button>
+	</form>
+	<p>Machine Learning Canvas v0.1</p>
+	<p><a href="http://www.louisdorard.com/">Louis Dorard</a> © 2015. Please reference <a href="http://www.machinelearningcanvas.com">machinelearningcanvas.com</a> by linking to it if you use the canvas.</p>
+</body>
+</html>
