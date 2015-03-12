@@ -33,7 +33,7 @@
 			background: white;
 		}
 		td p, li {
-			color: #999;
+			color: black;
 		}
 		thead th {
 			border:4px solid white;
@@ -55,7 +55,6 @@
 			-moz-transform: rotate(-90deg);
 			-o-transform: rotate(-90deg);
 			writing-mode: tb-rl;
-
 		}
 		label {
 			font-size: 20px;
@@ -107,29 +106,29 @@
 		</thead>
 		<tbody>
 			<tr>
-				<th><div>Idea</div></th>
+				<th><div>Background</div></th>
 				<td>
-					<label for="context">Context</label>
-					<p>Who will use the predictive system / who will be affected by it? Provide some background.</p>
+					<label for="context">End-user</label>
+					<p>Who will use the predictive system / who will be affected by it?</p>
 					<textarea name="context"></textarea>
 				</td>
 				<td>
-					<label for="vp">Value Proposition</label>
-					<p>What are we trying to do? E.g. spend less time on X, increase Y...</p>
+					<label for="vp">Value proposition</label>
+					<p>What are we trying to do for the system's users? (e.g. spend less time on X, increase Y...)</p>
 					<textarea name="vp"></textarea>
 				</td>
 				<td>
-					<label for="data-sources">Data Sources</label>
+					<label for="data-sources">Data sources</label>
 					<p>Where do/can we get data from? (internal database, 3rd party API, etc.)</p>
 					<textarea name="data-sources"></textarea>
 				</td>
 			</tr>
 			<tr>
-				<th><div>Specs</div></th>
+				<th><div>Engine Specs</div></th>
 				<td>
 					<label>Problem</label>
 					<ul>
-						<li>Question to predict answers to (in plain English)<input type="text" name="question"></li>
+						<li>Question to predict answers to (on behalf of user)<input type="text" name="question"></li>
 						<li>Input (i.e. question "parameter")<input type="text" name="input"></li>
 						<li>Possible outputs (i.e. "answers")<input type="text" name="output"></li>
 						<li>Type of problem (e.g. classification, regression, recommendation...)<input type="text" name="type"></li>
@@ -152,14 +151,14 @@
 
 				</td>
 				<td>
-					<label for="dataset">Dataset</label>
-					<p>How do we collect data (inputs and outputs)? How many data points?
+					<label for="features">Input features</label>
+					<p>Extracted from data sources. If too many, list types of features and mention key ones.</p>
+					<textarea style="height: 198px;" name="features"></textarea>
+
+					<label style="margin-top:40px;" for="dataset">Preparation</label>
+					<p>How do we get training data (inputs, and outputs if supervised learning) from the sources? How many data points?
 						<!--Also explain how to get example outputs, e.g. manually or we observe truth after making predictions, etc.)-->
 					</p><textarea style="height: 118px;" name="dataset"></textarea>
-
-					<label style="margin-top:40px;" for="features">Features</label>
-					<p>Used to represent inputs and extracted from data sources above. Group by types and mention key features if too many to list all.</p>
-					<textarea style="height: 198px;" name="features"></textarea>
 				</td>
 			</tr>
 		</tbody>
@@ -168,7 +167,7 @@
 	<table>
 		<tbody>
 			<tr>
-				<th width="40px"><div>Deployment</div></th>
+				<th width="40px"><div>Integration</div></th>
 				<td width="600px">
 					<label>Using predictions</label>
 					<ul>
@@ -179,7 +178,7 @@
 					</ul>
 				</td>
 				<td width="600px">
-					<label>Learning predictive models</label>
+					<label>Learning models</label>
 					<ul>
 						<li>When do we create/update models? With which data / how much?<textarea name="learning-when"></textarea></li>
 						<li>What is the time constraint for creating a model?<input type="text" name="learning-time"></li>
