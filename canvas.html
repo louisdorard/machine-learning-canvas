@@ -132,33 +132,28 @@
 						<li>Input (i.e. question "parameter")<input type="text" name="input"></li>
 						<li>Possible outputs (i.e. "answers")<input type="text" name="output"></li>
 						<li>Type of problem (e.g. classification, regression, recommendation...)<input type="text" name="type"></li>
+						<li>Baseline: simple, alternative way of making predictions (e.g. manual rules)<textarea name="baseline"></textarea></li>
 					</ul>
-
-					<label style="margin-top:40px;" for="baseline">Baseline</label>
-					<p>What is an alternative way of making predictions (e.g. manual rules based on feature values)?</p>
-					<textarea name="baseline"></textarea>
 				</td>
 				<td>
 					<label>Performance evaluation</label>
 					<ul>
 						<li>Domain-specific / bottom-line metrics for monitoring performance in production
 							<!--(there can be an A/B test to put metrics in perspective)-->
-							<textarea style="height: 118px;" name="bottomline"></textarea></li>
-						<li>Prediction accuracy metrics (e.g. MSE if regression; % accuracy, #FP for classification)<textarea style="height: 118px;" name="accuracy"></textarea></li>
+							<textarea style="" name="bottomline"></textarea></li>
+						<li>Prediction accuracy metrics (e.g. MSE if regression; % accuracy, #FP for classification)<textarea style="" name="accuracy"></textarea></li>
 						<li>Offline performance evaluation method (e.g. cross-validation or simple training/test split)
-							<textarea style="height: 118px;" name="evaluation-method"></textarea></li>
+							<textarea style="height: 78px;" name="evaluation-method"></textarea></li>
 					</ul>
 
 				</td>
 				<td>
-					<label for="features">Input features</label>
-					<p>Extracted from data sources. If too many, list types of features and mention key ones.</p>
-					<textarea style="height: 198px;" name="features"></textarea>
-
-					<label style="margin-top:40px;" for="dataset">Preparation</label>
-					<p>How do we get training data (inputs, and outputs if supervised learning) from the sources? How many data points?
-						<!--Also explain how to get example outputs, e.g. manually or we observe truth after making predictions, etc.)-->
-					</p><textarea style="height: 118px;" name="dataset"></textarea>
+					<label>Data preparation</label>
+						<ul>
+							<li>How do we get training data (inputs, and outputs if supervised learning)? How many data points?<textarea style="height: 118px;" name="dataset"></textarea></li>
+							<li>Input features (extracted from data sources). If too many, list types of features and mention key ones.<textarea style="height: 198px;" name="features"></textarea></li>
+						</ul>
+					<p></p>
 				</td>
 			</tr>
 		</tbody>
