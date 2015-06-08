@@ -109,7 +109,7 @@
 				<th><div>Background</div></th>
 				<td>
 					<label for="context">End-user</label>
-					<p>Who will use the predictive system / who will be affected by it?</p>
+					<p>Who will use the predictive application/who will be affected by it?</p>
 					<textarea name="context"></textarea>
 				</td>
 				<td>
@@ -128,9 +128,10 @@
 				<td>
 					<label>Problem</label>
 					<ul>
-						<li>Question to predict answers to (on behalf of user)<input type="text" name="question"></li>
+						<li>Decision to be made (on behalf of user)<input type="text" name="question"></li>
 						<li>Input (i.e. question "parameter")<input type="text" name="input"></li>
 						<li>Possible outputs (i.e. "answers")<input type="text" name="output"></li>
+						<li>Applicable trade-offs (i.e. "time vs. quality")<input type="text" name="tradeoff"></li>
 						<li>Type of problem (e.g. classification, regression, recommendation...)<input type="text" name="type"></li>
 						<li>Baseline: simple, alternative way of making predictions (e.g. manual rules)<textarea name="baseline"></textarea></li>
 					</ul>
@@ -138,7 +139,7 @@
 				<td>
 					<label>Performance evaluation</label>
 					<ul>
-						<li>Domain-specific / bottom-line metrics for monitoring performance in production
+						<li>Domain-specific/bottom-line metrics for monitoring performance in production
 							<!--(there can be an A/B test to put metrics in perspective)-->
 							<textarea style="" name="bottomline"></textarea></li>
 						<li>Prediction accuracy metrics (e.g. MSE if regression; % accuracy, #FP for classification)<textarea style="" name="accuracy"></textarea></li>
@@ -175,7 +176,7 @@
 				<td width="600px">
 					<label>Learning models</label>
 					<ul>
-						<li>When do we create/update models? With which data / how much?<textarea name="learning-when"></textarea></li>
+						<li>When do we create/update models? With what data/how much?<textarea name="learning-when"></textarea></li>
 						<li>What is the time constraint for creating a model?<input type="text" name="learning-time"></li>
 						<li>Criteria for deploying model (e.g. minimum performance value — absolute, relative to baseline or to previous model)<textarea name="learning-deployment"></textarea></li>
 					</ul>
