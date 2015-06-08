@@ -99,25 +99,25 @@
 		<thead>
 			<tr>
 				<th width="4Opx"></th>
-				<th width="400px">Predictions</th>
-				<th width="400px">Objectives</th>
-				<th width="400px">Data</th>
+				<th width="400px" colspan="2">Predictions</th>
+				<th width="400px" colspan="2">Objectives</th>
+				<th width="400px" colspan="2">Data</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<th><div>Background</div></th>
-				<td>
+				<td colspan="2">
 					<label for="context">End-user</label>
 					<p>Who will use the predictive system / who will be affected by it?</p>
 					<textarea name="context"></textarea>
 				</td>
-				<td>
+				<td colspan="2">
 					<label for="vp">Value proposition</label>
 					<p>What are we trying to do for the system's users? (e.g. spend less time on X, increase Y...)</p>
 					<textarea name="vp"></textarea>
 				</td>
-				<td>
+				<td colspan="2">
 					<label for="data-sources">Data sources</label>
 					<p>Where do/can we get data from? (internal database, 3rd party API, etc.)</p>
 					<textarea name="data-sources"></textarea>
@@ -125,7 +125,7 @@
 			</tr>
 			<tr>
 				<th><div>Engine Specs</div></th>
-				<td>
+				<td colspan="2">
 					<label>Problem</label>
 					<ul>
 						<li>Question to predict answers to (on behalf of user)<input type="text" name="question"></li>
@@ -135,7 +135,7 @@
 						<li>Baseline: simple, alternative way of making predictions (e.g. manual rules)<textarea name="baseline"></textarea></li>
 					</ul>
 				</td>
-				<td>
+				<td colspan="2">
 					<label>Performance evaluation</label>
 					<ul>
 						<li>Domain-specific / bottom-line metrics for monitoring performance in production
@@ -147,7 +147,7 @@
 					</ul>
 
 				</td>
-				<td>
+				<td colspan="2">
 					<label>Data preparation</label>
 						<ul>
 							<li>How do we get training data (inputs, and outputs if supervised learning)? How many data points?<textarea style="height: 118px;" name="dataset"></textarea></li>
@@ -156,14 +156,9 @@
 					<p></p>
 				</td>
 			</tr>
-		</tbody>
-	</table>
-
-	<table>
-		<tbody>
 			<tr>
 				<th width="40px"><div>Integration</div></th>
-				<td width="600px">
+				<td width="600px" colspan="3">
 					<label>Using predictions</label>
 					<ul>
 						<li>When do we make predictions and how many?<textarea name="predictions-when"></textarea></li>
@@ -172,7 +167,7 @@
 						<!--<li>What is the fallback if we don't get a prediction in time?<input type="text"></li>-->
 					</ul>
 				</td>
-				<td width="600px">
+				<td width="600px" colspan="3">
 					<label>Learning models</label>
 					<ul>
 						<li>When do we create/update models? With which data / how much?<textarea name="learning-when"></textarea></li>
