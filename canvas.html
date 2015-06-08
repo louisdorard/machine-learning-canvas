@@ -20,6 +20,11 @@
 		tr > td {
 			padding-bottom: 70px;
 		}
+
+		td[colspan="2"] {
+			min-width:390px;
+		}
+
 		td {
 			padding: 20px;
 			border: 4px solid white;
@@ -101,10 +106,10 @@
 	<table>
 		<thead>
 			<tr>
-				<th width="4Opx"></th>
-				<th width="400px" colspan="2">Predictions</th>
-				<th width="400px" colspan="2">Objectives</th>
-				<th width="400px" colspan="2">Data</th>
+				<th></th>
+				<th colspan="2">Predictions</th>
+				<th colspan="2">Objectives</th>
+				<th colspan="2">Data</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -160,8 +165,8 @@
 				</td>
 			</tr>
 			<tr>
-				<th width="40px"><div>Integration</div></th>
-				<td width="600px" colspan="3">
+				<th><div>Integration</div></th>
+				<td colspan="3">
 					<label>Using predictions</label>
 					<ul>
 						<li>When do we make predictions and how many?<textarea name="predictions-when"></textarea></li>
@@ -170,7 +175,7 @@
 						<!--<li>What is the fallback if we don't get a prediction in time?<input type="text"></li>-->
 					</ul>
 				</td>
-				<td width="600px" colspan="3">
+				<td colspan="3">
 					<label>Learning models</label>
 					<ul>
 						<li>When do we create/update models? With which data / how much?<textarea name="learning-when"></textarea></li>
