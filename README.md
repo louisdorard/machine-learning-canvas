@@ -24,6 +24,15 @@ an appropriate scale, so that the entire canvas fits onto one single page.
 
 Finally select PDF, Save as PDF in the bottom left of the screen.
 
+## Publishing on GitHub Pages
+
+In order to publish the HTML version of the canvas on GitHub Pages, e.g. on
+`username.github.io/machinelearningcanvas` use following steps:
+
+1. Create a new branch in git named `gh-pages`
+2. Whenever changes are made to the `canvas.html` file, merge these changes into the `gh-pages` branch
+3. Check the updated published canvas on [username.github.io/machinelearningcanvas/canvas.html](https://trieloff.github.io/machinelearningcanvas/canvas.html)
+
 ## Contact
 
 Any feedback and suggestions, please email me at louis@dorard.me
