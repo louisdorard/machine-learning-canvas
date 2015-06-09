@@ -16,6 +16,14 @@ The text inputs will be automatically persisted in your browser's cache. You can
 
 I recommend you occasionally print the html page as pdf as a backup or as a way to share what you've done with others.
 
+## Creating a new version
+
+Open the Machine Learning Canvas HTML file in Safari on Mac OS X, then press
+Command-P to print. In the print dialog, check "Print backgrounds" and select
+an appropriate scale, so that the entire canvas fits onto one single page.
+
+Finally select PDF, Save as PDF in the bottom left of the screen.
+
 ## Contact
 
 Any feedback and suggestions, please email me at louis@dorard.me
