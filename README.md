@@ -7,7 +7,7 @@ The Machine Learning Canvas is a template for developing new or documenting exis
 * canvas.html: the canvas in html
 * Machine Learning Canvas vX.pdf: a pdf version of the above
 * churn.pdf: an example of the canvas applied to churn detection
-* LICENSE: the full GPL v2.0 license
+* LICENSE: the full Creative Commons Attribution 4.0 license
 * README.md: what you're reading now
 
 ## How to use the html canvas
@@ -43,4 +43,4 @@ You can also follow me on Twitter [@louisdorard](http://twitter.com/louisdorard)
 
 Copyright © [Louis Dorard](http://www.louisdorard.com/)
 
-License: GPL v2.0
+License: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
